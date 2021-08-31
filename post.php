@@ -140,7 +140,6 @@ include 'check_con.php';
                   <div class="card col-md-10 offset-md-1">
                       <div class="col-12 text-center pt-5">
                          <img src="./admin/<?php echo $img ?>" class="card-img-top" alt="...">
-                         
                       </div>
                       <div class="card-body pb-5">
                         <h5 class="card-title text-center"> </h5>

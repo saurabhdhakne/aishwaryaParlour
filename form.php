@@ -1,3 +1,15 @@
+<?php 
+
+  if($_GET['msgDesc']){
+    $msg = $_GET['msgDesc'];
+  }
+  else{
+    $msg = 'Write Your Message here...';
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
   <head>
@@ -104,7 +116,7 @@
                 <li><a href="./services.html">Salon Services</a></li>
                 <li><a href="./academy.html">Academy</a></li>
                 <li><a href="./blog.php">Blog</a></li>
-                <li class="active"><a href="./about-us.html">About</a></li>
+                <li><a href="./about-us.html">About</a></li>
                 <li><a href="./contact.html">Contact</a></li>
               </ul>
             </nav>
@@ -147,10 +159,10 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="breadcrumb-text">
-              <h2>About us</h2>
+              <h2>Submit Details</h2>
               <div class="bt-option">
                 <a href="./index.html">Home</a>
-                <span>About</span>
+                <span>Submit Details</span>
               </div>
             </div>
           </div>
@@ -159,231 +171,94 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- ChoseUs Section Begin -->
-    <section class="choseus-section spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <span>Why chose us?</span>
-              <h2>Unleash the beauty within you</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <div class="cs-item">
-              <span class="display-4">
-                <i class="fa fa-pagelines" aria-hidden="true"></i>
-              </span>
-              <h4>Empathy</h4>
-              <p>
-                We put overselves in the position of the blind to understand.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="cs-item">
-              <span class="display-4">
-                <i class="fa fa-users" aria-hidden="true"></i>
-              </span>
-              <h4>Responsibility</h4>
-              <p>
-                We nuture the power of team performance but ensure individual.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="cs-item">
-              <span class="display-4">
-                <i class="fa fa-leaf" aria-hidden="true"></i>
-              </span>
-              <h4>Respect</h4>
-              <p>
-                We value diversity and treat other as we expect to be treated.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="cs-item">
-              <span class="display-4">
-                <i class="fa fa-hotel" aria-hidden="true"></i>
-              </span>
-              <h4>Relaxation</h4>
-              <p>
-                We are reliastic, positive and creative Sympathasize and love
-                the community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ChoseUs Section End -->
-
     <!-- About US Section Begin -->
     <section class="aboutus-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 p-0 about-text">
-            <div class="about-text col-md-8 offset-md-2">
-              <div class="section-title">
-                <h2>About</h2>
-                <span>Aishwarya Beauty Salon and Make-up Studio</span>
+            <section class="contact-section spad">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="section-title contact-title">
+                      <span>Contact Us</span>
+                      <h2>GET IN TOUCH</h2>
+                    </div>
+                    <div class="contact-widget">
+                      <div class="cw-text">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Aurangabad, Maharashtra. 431 001</p>
+                      </div>
+                      <div class="cw-text">
+                        <i class="fa fa-instagram"></i>
+                        <ul>
+                          <li>
+                            <a
+                              href="https://www.instagram.com/archanamantri1234/"
+                              class="text-light"
+                            >
+                              @archanamantri1234
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="cw-text email">
+                        <i class="fa fa-facebook"></i>
+                        <p>
+                          <a
+                            href="https://www.facebook.com/MuaArchana/"
+                            class="text-light"
+                            >MuaArchana</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="section-title contact-title">
+                      <span>Fill the form and</span>
+                      <h2>Submit The Details</h2>
+                    </div>
+                    <div class="leave-comment">
+                      <form action="./admin/formSubmit.php" method="POST">
+                        <input type="text" name="fname" placeholder="Name" />
+                        <input type="email" name="email" placeholder="Email" />
+                        <input
+                          type="number"
+                          name="mobile"
+                          placeholder="mobile"
+                        />
+                        <textarea
+                          name="msg"
+                          placeholder="Message(Optional)"
+                        >
+                        <?php echo $msg; ?>
+                        </textarea>
+                        <button type="submit">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938.0130816078536!2d75.36037682920293!3d19.88001226034866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDUyJzQ4LjAiTiA3NcKwMjEnMzkuMyJF!5e0!3m2!1sen!2sin!4v1614856789535!5m2!1sen!2sin"
+                    width="100%"
+                    height="300"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    height="750"
+                    style="border: 0"
+                    allowfullscreen=""
+                  ></iframe>
+                </div>
               </div>
-              <div class="at-desc">
-                <p class="h2">
-                  <!--  Archana mantri makeup, Saree draping and Hair
-                  styling artist in aurangabad maharashtra. Best in bridal
-                  Makeup party, Occasion, Media, Traditional and Fashion makeup
-                  in normal, HD and hair brush. The services are available in
-                  our studio in aurangabad on side and the venue all over india
-                  and world. for more details contact us or visit our studio in
-                  aurangabad. 
-                  -->
-                  Archana mantri founder of aishwarya beauty salon, makeup
-                  studio and spa centre aurangabad maharashtra.
-                  <br />
-                  <br />
-                  She run a saloon successfully since 20 year. We all know her
-                  as saree draping, makeup & hair stylist.
-                  <br />
-                  <br />
-                  In saree drapping She was awarded as fastest saree drapper by
-                  INDIA BOOK OF RECORDS.
-                  <br />
-                  <br />
-                  She drape a saree. In within 30 second and also saree drape
-                  dupatta folds and pleats. She knows 360 styles of variation.
-                  <br />
-                  <br />
-                  She had learned makeup from so many legendary celebrities
-                  artist just like 'ojas rajani' and she has taken part in ‘OMC
-                  ’ Hairworld makeup competition in 2020 which held in paris. It
-                  is world competition of make-up and hair. Her smokey eye
-                  makeup and commercial eye makeup both category got selected by
-                  indian jury panel. AIHAB (All India Hair And Beauty
-                  Association). for more details contact us or visit our studio
-                  in aurangabad.
-
-                  <br />
-                  <br /><br />
-                  The Best Service All Over.
-                </p>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
     </section>
     <!-- About US Section End -->
-
-    <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <span>Testimonial</span>
-              <h2>Our cilent say</h2>
-            </div>
-          </div>
-        </div>
-        <div class="ts_slider owl-carousel">
-          <div class="ts_item">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <div class="ti_pic">
-                  <img src="img/testimonial/testimonial-1.jpg" alt="" />
-                </div>
-                <div class="ti_text">
-                  <p class="col-md-10 offset-md-1 text-justify">
-                    Mein Student of Archna Mantri . aishwarya beauty salon
-                    makeup studio spa center n-5 CIDCO Aurangabad Mein yaha par
-                    Advance course kiya hai... Mam me bhot aache se sikhaya. Har
-                    proud ka knowledge deep me dete hai.... Bhot sari choti
-                    choti chize bhi wo bhot aache se sikhatae hai. Skin ke baare
-                    me ho ya hair ke baare me bhot aache se knowledge dete
-                    hai.... Mam ka nature bhot aacha hai... Client ke sath kaise
-                    behave kare ye bhi mam hume batate hai.. ...aisi hi bhot
-                    choti choti baate wo batati hai ... Ye humesha life me bhot
-                    kaam aayegi.
-                  </p>
-                  <h5>Rasika Tawani.</h5>
-                  <div class="tt-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ts_item">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <div class="ti_pic">
-                  <img src="img/testimonial/testimonial-2.jpg" alt="" />
-                </div>
-                <div class="ti_text">
-                  <p class="col-md-10 offset-md-1 text-justify">
-                    Hello I am hema baheti from sindhkhedraja. I had joined 3
-                    months advance makeup hair treatments classes in Aishwarya
-                    beauty salon and makeup studio I have such a great time and
-                    an awesome experience with Archana mantri mam she is amazing
-                    artist with a lots of knowledge and experience..I really
-                    enjoyed classes.mam your explain things very clear for me to
-                    understood.i love that you made it so easy step-by-step you
-                    took your Time with me till I understood but most of all you
-                    are a very caring person your work is beautiful.. I would
-                    recommend this salon to anyone who wants to become a make up
-                    artist.
-                  </p>
-                  <h5>Hema Baheti</h5>
-                  <div class="tt-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ts_item">
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <div class="ti_pic">
-                  <img src="img/testimonial/testimonial-2.jpg" alt="" />
-                </div>
-                <div class="ti_text">
-                  <p class="col-md-10 offset-md-1 text-justify">
-                    Aishwarya beauty parlour here I'm joining makeup cource..
-                    Archana mam teaches really very well..mam teaches every
-                    small things in deeply.. that's very helpful for students
-                    and also her nature is sweet..
-                  </p>
-                  <h5>Sanika Darak</h5>
-                  <div class="tt-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonial Section End -->
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">

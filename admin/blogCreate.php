@@ -109,6 +109,13 @@ else{
                   <span>Create Blog</span>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="msg.php" aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="fab fa-blogger-b"></i>
+                  <span>Message</span>
+                </a>
+              </li>
     </ul>
     <div id="content-wrapper" class="d-flex flex-column">
 

@@ -14,8 +14,8 @@ else{
   header("location:../index.php");
 }
   
-  $sql = "SELECT * FROM blog ORDER BY id DESC " ;
-
+  $sql = "SELECT * FROM msg ORDER BY id DESC " ;
+    
   $result = mysqli_query($conn,$sql);
   
   $lengths = 0;
@@ -175,7 +175,7 @@ else{
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Member</div>
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Messages</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800" id="total">  </div>
                                     </div>
                                     <div class="col-auto">
@@ -186,23 +186,6 @@ else{
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="blogCreate.php">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h1"></div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total"> Create New Blog </div>
-                                        </div>
-                                        <div class="col-auto">
-                                        <i class="fas fa-plus fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
 
             </div>
   
@@ -218,7 +201,7 @@ else{
                   <!-- Project Card Example -->
                   <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                      <h6 class="m-0 font-weight-bold text-primary">Blog Details</h6>
+                      <h6 class="m-0 font-weight-bold text-primary">Details</h6>
                     </div>
                     <div class="card-body row">
 
@@ -226,10 +209,10 @@ else{
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">Title</th>
-                          <th scope="col">Date</th>
-                          <th scope="col">Open</th>
-                          <th scope="col">Edit</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Msg</th>
                           <th scope="col">Delete</th>
                         </tr>
                       </thead>
@@ -239,18 +222,20 @@ else{
                             if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                               $id = $row['id'];
-                              $title = $row['title'];
-                              $date = $row['dop'];
+                              $fname = $row['fname'];
+                              $email = $row['email'];
+                              $mobile = $row['mobile'];
+                              $msg = $row['msg'];
                               $lengths++;
                             ?>
 
                                 <tr>
                                       <th scope="row"><?php echo $id ?></th>
-                                      <td> <?php echo $title; ?> </td>
-                                      <td> <?php echo $date; ?>  </td>
-                                      <td> <input type="button" class="btn btn-outline-primary" value="Open" onclick="window.location='https://salon.in/blog/post.php?id=<?php echo $id  ?>' "> </td>
-                                      <td> <input type="button" class="btn btn-outline-primary" value="Open" onclick="window.location='blogUpdate.php?id=<?php echo $id  ?>' "> </td>
-                                      <td> <input type="button" class="btn btn-outline-danger" value="Delete" onclick="window.location='blogDelete.php?id=<?php echo $id; ?> ' "> </td>
+                                      <td> <?php echo $fname; ?> </td>
+                                      <td> <?php echo $email; ?>  </td>
+                                      <td> <?php echo $mobile; ?>  </td>
+                                      <td> <?php echo $msg; ?>  </td>
+                                      <td> <input type="button" class="btn btn-outline-danger" value="Delete" onclick="window.location='msgDelete.php?id=<?php echo $id; ?> ' "> </td>
                                 </tr>
                               <?php
 
