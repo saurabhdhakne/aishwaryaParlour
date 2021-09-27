@@ -138,26 +138,51 @@
 
     <!-- Gallery Section Begin -->
     <div class="gallery-section gallery-page p-4 ">
-        <div class="gallery2 row ">
+        <div class="gallery2 row " id="gdata">
             <!-- <div class="grid-sizer"></div> -->
-            <?php
-                $directory = "img/data/transformation";
-                $images = glob($directory . "/*.jpg");
-                foreach($images as $image)
-                {
-            ?>
-                <div class="col-md-2" >
-                    <a href="<?php echo $image ?>" class="thumb-icon image-popup">  
-                        <img src="<?php echo $image ?>" width="100%" alt="" style="opacity:.5">
-                        <i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i>
-                </a>
-                </div>
+            <!-- Gallery Section End -->
 
-            <?php }  ?>
-          
+        </div>
+        <div class="col-md-4 offset-md-4 mt-5 text-center">
+            <input type="button" class="btn primary-btn btn-normal" id="showMore" onClick="pagination()" value="Show More">
         </div>
     </div>
-    <!-- Gallery Section End -->
+    <?php
+        $directory = "img/data/transformation";
+        $images = glob($directory . "/*.jpg");
+    ?>
+    <script>
+        var js_data = '<?php echo json_encode($images); ?>';
+        var data = JSON.parse(js_data );
+        console.log(data);
+
+        total = data.length - 1;
+        current = 11;
+        limit = 10;
+        prev = 0;
+        
+        function pagination(){
+          prev = current+1;
+          current += limit; 
+          if(current > total){ 
+            current = total;
+            document.getElementById('showMore').style.display = "none";
+          }
+          for(let i=prev ;i <= current; i++){
+              document.getElementById('gdata').innerHTML += '<div class="col-md-2" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.5"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
+          }
+          
+        }
+
+        function paginationOnLoad(){
+            
+          for(let i=prev ;i <= current; i++){
+            document.getElementById('gdata').innerHTML += '<div class="col-md-2" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.5"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
+          }
+          
+        }paginationOnLoad();
+        
+    </script>
     
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
