@@ -70,6 +70,7 @@
           <li><a href="./sider.php">Sider Makeup</a></li>
           <li><a href="./occasional.php">Occasional Makeup</a></li>
           <li><a href="./services.html">Salon Services</a></li>
+          <li><a href="./gallery.php">Gallery</a></li>
           <li><a href="./academy.html">Academy</a></li>
           <li><a href="./blog.php">Blog</a></li>
           <li><a href="./about-us.html">About</a></li>
@@ -114,6 +115,7 @@
                 <li><a href="./sider.php">Sider Makeup</a></li>
                 <li><a href="./occasional.php">Occasional Makeup</a></li>
                 <li><a href="./services.html">Salon Services</a></li>
+                <li><a href="./gallery.php">Gallery</a></li>
                 <li><a href="./academy.html">Academy</a></li>
                 <li><a href="./blog.php">Blog</a></li>
                 <li><a href="./about-us.html">About</a></li>

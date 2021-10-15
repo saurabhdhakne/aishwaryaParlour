@@ -85,8 +85,10 @@
                             <li><a href="./transformation.php">Transformation</a></li>
                             <li><a href="./bridal.php">Bridal Makeup</a></li>
                             <li><a href="./sider.php">Sider Makeup</a></li>
-                            <li class="active"><a href="./occasional.php">Occasional Makeup</a></li>
+                            <li><a href="./occasional.php">Occasional Makeup</a></li>
                             <li><a href="./services.html">Salon Services</a></li>
+                            <li class="active"><a href="./gallery.php">Gallery</a></li>
+                            <li><a href="./gallery.php">Gallery</a></li>
                             <li><a href="./academy.html">Academy</a></li>
                             <li><a href="./blog.php">Blog</a></li>
                             <li><a href="./about-us.html">About</a></li>
@@ -124,11 +126,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Occasional</h2>
+                        <h2>Gallery</h2>
                         <div class="bt-option">
                             <a href="./index.html">Home</a>
                             <a href="#">Pages</a>
-                            <span>Occasional</span>
+                            <span>Gallery</span>
                         </div>
                     </div>
                 </div>
@@ -137,19 +139,21 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-  <!-- Gallery Section Begin -->
-  <div class="gallery-section gallery-page p-4 ">
-        <div class="gallery2 row " id="gdata">
-            <!-- <div class="grid-sizer"></div> -->
-            <!-- Gallery Section End -->
+   <!-- Gallery Section Begin -->
+   <div class="gallery-section gallery-page p-4 ">
+        <div class="col-md-10 offset-md-1">
+            <div class="gallery2 row " id="gdata">
+                <!-- <div class="grid-sizer"></div> -->
+                <!-- Gallery Section End -->
 
+            </div>
         </div>
         <div class="col-md-4 offset-md-4 mt-5 text-center">
             <input type="button" class="btn primary-btn btn-normal" id="showMore" onClick="pagination()" value="Show More">
         </div>
     </div>
     <?php
-        $directory = "img/data/occasional";
+        $directory = "img/data/gallery";
         $images = glob($directory . "/*.jpg");
     ?>
     <script>
@@ -158,8 +162,8 @@
         console.log(data);
 
         total = data.length - 1;
-        current = 11;
-        limit = 10;
+        current = 1;
+        limit = 2;
         prev = 0;
         
         function pagination(){
@@ -170,7 +174,7 @@
             document.getElementById('showMore').style.display = "none";
           }
           for(let i=prev ;i <= current; i++){
-              document.getElementById('gdata').innerHTML += '<div class="col-md-2" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.5"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
+              document.getElementById('gdata').innerHTML += '<div class="col-md-6 mt-4" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.8"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
           }
           
         }
@@ -178,7 +182,7 @@
         function paginationOnLoad(){
             
           for(let i=prev ;i <= current; i++){
-            document.getElementById('gdata').innerHTML += '<div class="col-md-2" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.5"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
+            document.getElementById('gdata').innerHTML += '<div class="col-md-6 mt-4" ><a href="'+ data[i] +'" class="thumb-icon image-popup">  <img src="'+ data[i] +'" width="100%" alt="" style="opacity:.8"><i class="fa fa-picture-o" style="position:absolute;left:45%;top:45%;font-size:3em;color:orange"> </i></a></div>' 
           }
           
         }paginationOnLoad();
